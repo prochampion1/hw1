@@ -1,0 +1,15 @@
+<h1>Sai Gon Restaurnt </h1>
+ <% @fooditems.each do |fooditem| %>
+<div class="card">
+  <img class="card-img-top" src="fooditem.image_url" alt="Card image cap">
+  <%= image_tag 
+  <div class="card-block">
+    <h4 class="card-title"><%= fooditem.name %></h4>
+    <p class="card-text"><%= fooditem.description %></p>
+  </div>
+  
+  <div class="card-block">
+    <a href="#" class="card-link btn btn-danger">Order</a>
+  </div>
+</div>
+<% end %>

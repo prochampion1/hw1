@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fooditems</h1>
+
+<table class ="table table-striped table-">
+  <thead>
+
+    <tr>
+      <th>Description</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Ima url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fooditems.each do |fooditem| %>
+      <tr>
+        <td><%= fooditem.description %></td>
+        <td><%= fooditem.name %></td>
+        <td><%= fooditem.price %></td>
+        <td><%= fooditem.ima_url %></td>
+        <td><%= link_to 'Show', fooditem %></td>
+        <td><%= link_to 'Edit', edit_fooditem_path(fooditem) %></td>
+        <td><%= link_to 'Destroy', fooditem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fooditem', new_fooditem_path, class:'btn btn-secondary'%>
