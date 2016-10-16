@@ -71,4 +71,14 @@ class FooditemsController < ApplicationController
     def fooditem_params
       params.require(:fooditem).permit(:description, :name, :price, :ima_url, :section)
     end
+
+    def image_url_or_default
+if ima_url.present?
+  ima_url
+else
+ "http://loremflickr.com/320/240/#{name}"  
+end
+
+end 
+
 end
