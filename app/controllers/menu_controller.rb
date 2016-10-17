@@ -12,17 +12,15 @@ class MenuController < ApplicationController
    
     case params[:orderby]
     when "alphabet"
-      p @fooditems
-      p "aaaaaaaaaaaaaaaaaaa"
+      
       @fooditems.order(:name)
     when "prlowtohigh"
       p @fooditems
-      p "aaaaaaaaaaaaaaaaaaa"
+      
       @fooditems.order(:price)
 
     when "prhightolow"
       p @fooditems
-      p "aaaaaaaaaaaaaaaaaaa"
       @fooditems.order(price: :desc)
     else
       @fooditems
