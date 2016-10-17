@@ -28,7 +28,7 @@ Clicking on an item in the menu brings up its detail, where you see the descript
 
 The User can click "order" on a menu item to go to a "Create Order" page.
 
-xThe User is able to fill in their name, phone number, and address.
+The User is able to fill in their name, phone number, and address.
 
 The User is taken to a "Thank you for your order page" that lists the name of item, the total cost (delivery should cost 20,000 VND), the user's name, the user's address, and the time the order was created in human-readable format (for example, Tuesday, December 1, 15:25).
 

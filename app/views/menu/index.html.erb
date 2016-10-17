@@ -11,7 +11,9 @@
   <% end %>
 </div>
 <div class="card card-block">
+
 <%= form_tag menu_path, method: 'get' do %>
+
 <% if params[:section] %>
 <%= hidden_field_tag :section, params[:section] %>
 <% end %>
@@ -41,7 +43,7 @@
          
       
               <div class="card-block">
-                 
+                  <p class="card-text"><%= number_to_currency fooditem.price, locale: :vi, precision: 0 %></p>
                   <a href= <%= "/fooditems/#{fooditem.id}/orders/new"%> class="btn btn-primary">Order</a>
               </div>
        </div>

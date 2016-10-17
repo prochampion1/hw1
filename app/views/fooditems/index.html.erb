@@ -19,7 +19,7 @@
       <tr>
         <td><%= fooditem.description %></td>
         <td><%= fooditem.name %></td>
-        <td><%= number_to_currency(fooditem.price, :locale => :vi, precision: 0) %></td>
+        <td><%= food_item.price %></td>
         <td><%= fooditem.ima_url %></td>
         <td><%= link_to 'Show', fooditem %></td>
         <td><%= link_to 'Edit', edit_fooditem_path(fooditem) %></td>
