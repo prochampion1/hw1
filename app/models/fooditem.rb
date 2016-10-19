@@ -2,7 +2,7 @@ class Fooditem < ApplicationRecord
 has_many :orders, dependent: :destroy
 validates :name, :section, :price, presence: true
 validates :price, numericality: true
-
+belongs_to :section
 
   
 def image_url_or_default

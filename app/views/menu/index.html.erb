@@ -4,26 +4,28 @@
                         <%= text_field_tag :search, params[:search], placeholder: "Food" %>
                         <%= submit_tag "Search" %>
             <% end %>
-  </form>
-<div class="btn-group" role="group" aria-label="Basic example">
+</form>
+
+<ul class="nav nav-pills">
 <% Section.all.each do |section| %>
-<%= link_to section, menu_path(section: section), class:'btn btn-secondary' %> 
+<li class="nav-item">
+<%= link_to section.name, menu_path(section: section.name), class: "nav-link #{'active' if params[:section] == section.name}" %> 
+</li>
   <% end %>
-</div>
+</ul>
+
 <div class="card card-block">
-
 <%= form_tag menu_path, method: 'get' do %>
-
 <% if params[:section] %>
 <%= hidden_field_tag :section, params[:section] %>
 <% end %>
 <div class="form-inline">
+
 <%= select_tag "orderby", options_for_select([['alphabetical', 'alphabet'], ['price low to high', 'prlowtohigh'], ['price high to low', 'prhightolow']], params[:orderby]), {:prompt => 'Sort by'} %>
     <%= submit_tag "Sort", :name => nil %>
     <% end %>
   </div>
 </div>
-
 
 <div id="food-list">
 <div class="container">
